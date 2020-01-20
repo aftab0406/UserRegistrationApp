@@ -1,0 +1,11 @@
+Hi ${firstName} ${lastName}
+<br>
+	Welcome to IES family, your registration is almost complete,
+<br>
+	Your Temporary Password is: ${tempPwd} 
+<br>
+	please change your password to unlock your account for <a href="http://localhost:9889/ChangePassword?email=${email}">Change Password</a>
+<br>
+Thanks
+<br/>
+IES Family.

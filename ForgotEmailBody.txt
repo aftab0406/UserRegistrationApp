@@ -1,0 +1,11 @@
+Hi ${firstName} ${lastName}
+<br>
+	Welcome to IES family, check your password below.
+<br>
+	Password: ${tempPwd} 
+<br>
+	click here for <a href="http://localhost:9889/Login?email=${email}">Login</a>
+<br>
+Thanks
+<br/>
+IES Family.

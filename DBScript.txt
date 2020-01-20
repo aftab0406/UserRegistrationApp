@@ -1,0 +1,99 @@
+create table COUNTRY_MASTER (
+		COUNTRY_ID number(5) primary key,
+		COUNTRY_NAME varchar2(30)
+		)
+/
+
+insert into COUNTRY_MASTER (COUNTRY_ID,COUNTRY_NAME)
+	values(1,'Australia')
+/
+insert into COUNTRY_MASTER (COUNTRY_ID,COUNTRY_NAME)
+	values(2,'India')
+/
+insert into COUNTRY_MASTER (COUNTRY_ID,COUNTRY_NAME)
+	values(3,'USA')
+/
+
+
+create table STATE_MASTER (
+		STATE_ID number(5) primary key,
+		STATE_NAME varchar2(30),
+		COUNTRY_ID number(5) references COUNTRY_MASTER(COUNTRY_ID)
+		)
+/
+
+insert into STATE_MASTER (STATE_ID,STATE_NAME,COUNTRY_ID)
+	values(1,'Queensland',1)
+/
+insert into STATE_MASTER (STATE_ID,STATE_NAME,COUNTRY_ID)
+	values(2,'Victoria',1)
+/
+
+insert into STATE_MASTER (STATE_ID,STATE_NAME,COUNTRY_ID)
+	values(3,'Maharashtra',2)
+/
+insert into STATE_MASTER (STATE_ID,STATE_NAME,COUNTRY_ID)
+	values(4,'Karnataka',2)
+/
+
+insert into STATE_MASTER (STATE_ID,STATE_NAME,COUNTRY_ID)
+	values(5,'California',3)
+/
+insert into STATE_MASTER (STATE_ID,STATE_NAME,COUNTRY_ID)
+	values(6,'Arizona',3)
+/
+
+
+
+create table CITY_MASTER (
+		CITY_ID number(5) primary key,
+		CITY_NAME varchar2(30),
+		STATE_ID number(5) references STATE_MASTER(STATE_ID)
+		)
+/
+insert into CITY_MASTER(CITY_ID,CITY_NAME,STATE_ID)
+	values(1,'Brisbane',1)
+/
+insert into CITY_MASTER(CITY_ID,CITY_NAME,STATE_ID)
+	values(2,'Mackay',1)
+/
+
+insert into CITY_MASTER(CITY_ID,CITY_NAME,STATE_ID)
+	values(3,'Melbourne',2)
+
+/
+insert into CITY_MASTER(CITY_ID,CITY_NAME,STATE_ID)
+	values(4,'Swan Hill',2)
+/
+
+
+insert into CITY_MASTER(CITY_ID,CITY_NAME,STATE_ID)
+	values(5,'Mumbai',3)
+/
+insert into CITY_MASTER(CITY_ID,CITY_NAME,STATE_ID)
+	values(6,'Pune',3)
+/
+
+
+insert into CITY_MASTER(CITY_ID,CITY_NAME,STATE_ID)
+	values(7,'Bengaluru',4)
+/
+insert into CITY_MASTER(CITY_ID,CITY_NAME,STATE_ID)
+	values(8,'Mysuru',4)
+/
+
+
+insert into CITY_MASTER(CITY_ID,CITY_NAME,STATE_ID)
+	values(9,'Los Angeles',5)
+/
+insert into CITY_MASTER(CITY_ID,CITY_NAME,STATE_ID)
+	values(10,'San Francisco',5)
+/
+
+
+insert into CITY_MASTER(CITY_ID,CITY_NAME,STATE_ID)
+	values(11,'Phoenix',6)
+/
+insert into CITY_MASTER(CITY_ID,CITY_NAME,STATE_ID)
+	values(12,'Scottsdale',6)
+/
